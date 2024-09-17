@@ -35,21 +35,21 @@ const Mainpage = () => {
     <>
       <Carousel activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item>
-          <img src={carouselImg1} />
+          <img src={carouselImg1} className="object-fit-cover" />
           <Carousel.Caption>
             <h3>Hızlı ve Güvenilir Araç Kiralama</h3>
             <p>Konfor, Güven, Uygun Fiyat</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img src={carouselImg2} />
+          <img src={carouselImg2} className="object-fit-cover" />
           <Carousel.Caption>
             <h3>Kolay Araç Kiralama Deneyimi</h3>
             <p>Hız, Esneklik, Memnuniyet</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img src={carouselImg} />
+          <img src={carouselImg} className="object-fit-cover" />
           <Carousel.Caption>
             <h3>Her Yola Uygun Araçlar</h3>
             <p>Kalite, Konfor, Güvenlik</p>

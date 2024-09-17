@@ -92,7 +92,7 @@ const Cars = () => {
               aria-controls="nav-is"
               aria-selected="false"
             >
-              Arazi
+              İş Makinası
             </button>
             <button
               className="nav-link"
