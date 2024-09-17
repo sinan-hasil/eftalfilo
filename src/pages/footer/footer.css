@@ -1,0 +1,17 @@
+footer {
+  color: white;
+}
+footer .logo {
+  width: 100px;
+}
+footer p {
+  margin-top: 40px;
+  width: 450px;
+}
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+footer ul li {
+  padding: 10px;
+}/*# sourceMappingURL=footer.css.map */

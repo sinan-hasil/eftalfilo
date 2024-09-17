@@ -1,0 +1,26 @@
+form .container .col {
+  padding: 0;
+}
+form .container .e-mail {
+  width: 900px;
+}
+
+.contact {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 20px 0;
+}
+.contact .list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.contact .list ul {
+  list-style: none;
+  padding: 0;
+}
+.contact .list ul li {
+  padding: 10px 0;
+  text-align: center;
+}/*# sourceMappingURL=contact.css.map */
