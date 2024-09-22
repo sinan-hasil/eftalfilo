@@ -1,4 +1,4 @@
-import logo from "../../images/logo.png"
+import logo from "../../images/açık renk.png"
 import "./footer.css"
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";

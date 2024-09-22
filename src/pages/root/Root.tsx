@@ -8,7 +8,7 @@ import {
   NavDropdown,
   Offcanvas,
 } from "react-bootstrap";
-import logo from "../../images/logo.png";
+import logo from "../../images/Koyu Logo .png";
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import "./root.css"
@@ -19,10 +19,10 @@ const Root = () => {
   const handleShow = () => setShow(true);
   return (
     <>
-      <Navbar className="bg-body-tertiary">
+      <Navbar>
         <Container>
           <Navbar.Brand as={Link} to={"/"}>
-            <img src={logo} width={"70px"} className="logo" alt="Site Logo" />
+            <img src={logo} width={"90px"} className="logo" alt="Site Logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse className="justify-content-end">
@@ -63,7 +63,7 @@ const Root = () => {
                     </Nav.Link>
                   </NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href={"#job-description"} className="d-none d-sm-block text-muted">Hakkımızda</Nav.Link>
+                <Nav.Link href={"/#job-description"} className="d-none d-sm-block text-muted">Hakkımızda</Nav.Link>
                 <Nav.Link className="d-none d-sm-block text-muted" as={Link} to={"/contact"}>
                   İletişim
                 </Nav.Link>

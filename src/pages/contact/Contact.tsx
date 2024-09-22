@@ -1,252 +1,378 @@
 import { useState } from "react";
-import { Button, Col, Container, Dropdown, Form, Row } from "react-bootstrap";
+import {
+  Button,
+  Col,
+  Container,
+  Dropdown,
+  Form,
+  Row,
+  ToggleButton,
+  ToggleButtonGroup,
+} from "react-bootstrap";
 import "./contact.css";
 
-interface CarsType {
-  binek_arac: string[];
-  hafif_ticari: string[];
-  ticari: string[];
-  arazi: string[];
-  vip: string[];
-  is_makinasi: string[];
+interface BrandItem {
+  [key: string]: string[];
 }
 
-const cars: CarsType = {
-  binek_arac: [
-    "Renault Megane",
-    "Renault Talisman",
-    "Renault Clio",
-    "Renault Taliant",
-    "Hyundai İ20",
-    "Fiat Egea",
-    "Toyota Corolla",
-    "Dacia Jugger",
-  ],
-  hafif_ticari: ["Fiat Doblo", "Fiat Doblo Panelvan", "Ford Courier"],
-  ticari: ["Ford Transit", "Citroen Jumper", "Peugeot Boxer"],
-  arazi: [
-    "Dacia Duster",
-    "Isuzu D-max",
-    "Mitsubishi L-200",
-    "Toyota Hilux",
-    "Ford Ranger",
-  ],
-  vip: ["Mercedes Vito", "Volkswagen Crafter"],
-  is_makinasi: [
-    "Mitsubishi Temsa Atlas",
-    "Süpürge Aracı",
-    "Kanal Açma Aracı",
-    "Sepetli Vinç",
-    "Su Tankeri",
-  ],
-};
+type BrandArray = BrandItem[];
+
+const brand: BrandArray = [
+  { Renault: ["Megane", "Talisman", "Clio", "Taliant"] },
+  { Fiat: ["Egea", "Doblo", "Doblo Panelvan"] },
+  { Toyota: ["Corolla", "Hilux"] },
+  { Dacia: ["Jugger", "Duster"] },
+  { Ford: ["Courier", "Transit", "Ranger"] },
+  { Citroen: ["Jumper"] },
+  { Peugeot: ["Boxer"] },
+  { Isuzu: ["D-max"] },
+  { Mitsubishi: ["L-200"] },
+  { Mercedes: ["Vito"] },
+  { Hyundai: ["İ20"] },
+  {
+    "İş Makinası": [
+      "Mitsubishi Temsa Atlas",
+      "Süpürge Aracı",
+      "Kanal Açma Aracı",
+      "Sepetli Vinç",
+      "Su Tankeri",
+    ],
+  },
+];
+
+const rentalPeriods = ["Günlük", "Aylık", "Yıllık"];
+
+const ilceler = [
+  "Başiskele",
+  "Çayırova",
+  "Darıca",
+  "Derince",
+  "Dilovası",
+  "Gebze",
+  "Gölcük",
+  "İzmit",
+  "Kandıra",
+  "Karamürsel",
+  "Kartepe",
+  "Körfez",
+];
 
 const Contact = () => {
-  const [selectedVipCar, setSelectedVipCar] = useState<string | null>(null);
-  const [selectedAraziCar, setSelectedAraziCar] = useState<string | null>(null);
-  const [selectedTicariCar, setSelectedTicariCar] = useState<string | null>(null);
-  const [selectedBinekArac, setSelectedBinekArac] = useState<string | null>(null);
-  const [selectedHafifTicari, setSelectedHafifTicari] = useState<string | null>(null);
-  const [selectedIsMakinasi, setSelectedIsMakinasi] = useState<string | null>(null);
+  const [selectedBrand, setSelectedBrand] = useState<string>("Marka Seçin");
+  const [models, setModels] = useState<string[]>([]);
+  const [selectedModel, setSelectedModel] = useState<string>("Model Seçin");
+  const [selectedPeriod, setSelectedPeriod] = useState<string>(
+    "Kiralama Süresi Seçin"
+  );
+  const [quantity, setQuantity] = useState<number>(1);
+  const [value, setValue] = useState([1, 3]);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [submittedData, setSubmittedData] = useState<any[]>([]);
+
+  const handleBrandSelect = (brandName: string) => {
+    setSelectedBrand(brandName);
+    const selectedBrandItem = brand.find((item) => brandName in item);
+    if (selectedBrandItem) {
+      setModels(selectedBrandItem[brandName]);
+    } else {
+      setModels([]);
+    }
+  };
+
+  const handleModelSelect = (model: string) => {
+    setSelectedModel(model);
+  };
+
+  const handlePeriodSelect = (period: string) => {
+    setSelectedPeriod(period);
+  };
+
+  const increment = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  const decrement = () => {
+    if (quantity > 1) {
+      setQuantity((prevQuantity) => prevQuantity - 1);
+    }
+  };
+
+  
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleChange = (val: any) => setValue(val);
+
+  const handleSubmit = () => {
+    setSubmittedData([
+      ...submittedData,
+      {
+        brand: selectedBrand,
+        model: selectedModel,
+        period: selectedPeriod,
+        quantity,
+      },
+    ]);
+    
+    
+    setSelectedBrand("Marka Seçin");
+    setModels([]);
+    setSelectedModel("Model Seçin");
+    setSelectedPeriod("Kiralama Süresi Seçin");
+    setQuantity(1);
+    setValue([1, 3]);
+  };
+
+  const handleWhatsAppSend = () => {
+    const phoneNumber = "+905513911163";
+    const url = "https://wa.me/" + phoneNumber + "?text=" +
+    "Merhaba! Seçtiğim araç hakkında bilgi almak istiyorum." + "\n" +
+     "Marka: " + selectedBrand + "\n" +
+    "Model: " + selectedModel + "\n" +
+    "Kiralama Süresi: " + selectedPeriod + "\n" +
+    "";
+
+    window.open(url, "_blank")?.focus()
+};
+  
+  
 
   return (
     <>
-      <form
-        className="py-5 w-100"
-        method="POST"
-        action="https://formsubmit.co/sinan.hasil61@gmail.com"
-      >
-        <Container>
-          <h2 className="text-center mb-5">Bize Ulaşın</h2>
-          <Row className="gap-4 justify-content-center">
-            <Col sm={12} md={4}>
-              <div>
-                <label htmlFor="name">
-                  <small>*İsim</small>
-                </label>
-                <Form.Control required id="name" type="text" />
-              </div>
-            </Col>
-
-            <Col sm={12} md={4}>
-              <div>
-                <label htmlFor="last-name">
-                  <small>*Soyisim</small>
-                </label>
-                <Form.Control required id="last-name" type="text" />
-              </div>
-            </Col>
-
-            <div className="e-mail">
-            <label htmlFor="email">
-              <small>*E-mail</small>
-            </label>
-            <Form.Control required id="email" type="email" />
-            </div>
-          </Row>          
-        </Container>
-
-        <Container>
-        <div className="py-5 d-flex flex-column gap-5">
-          <h2 className="text-center">Araç Bilgileri</h2>
-          <p className="text-center">
-            Lütfen yukarıdaki kişisel bilgileri doldurduktan sonra talep
-            ettiğiniz araç tipini seçin
+      <div className="bg-secondary py-5 mb-5">
+        <Container className="px-5 d-flex flex-column gap-4 text-white">
+          <h1 className="text-center">HEMEN TEKLİF ALIN</h1>
+          <p className="text-center px-5">
+            Alttaki formu doldurarak, ihtiyaçlarınıza uygun araç kiralama
+            teklifinizi hemen alın. Eftal Rent a Car olarak, size en iyi hizmeti
+            sunabilmek için hızlı ve kolay bir teklif süreci sağlıyoruz. Formu
+            tamamladıktan sonra, uzman ekibimiz size en kısa sürede geri dönüş
+            yaparak detayları iletecektir. Yolda güvende olmak için hemen teklif
+            alın!
           </p>
-
-          <Row>
-            <Col className="d-flex justify-content-center flex-column align-items-center">
-              <h6>VİP Araç</h6>
-              <Dropdown onSelect={(car) => car && setSelectedVipCar(car)}>
-                <Dropdown.Toggle variant="outline-success" id="dropdown-basic">
-                  {selectedVipCar ? selectedVipCar : "Araç Seçin"}
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  {cars.vip.map((item, index) => (
-                    <Dropdown.Item key={index} eventKey={item}>
-                      {item}
-                    </Dropdown.Item>
-                  ))}
-                </Dropdown.Menu>
-              </Dropdown>
-            </Col>
-
-            <Col className="d-flex justify-content-center flex-column align-items-center">
-              <h6>Arazi Aracı</h6>
-              <Dropdown onSelect={(car) => car && setSelectedAraziCar(car)}>
-                <Dropdown.Toggle variant="outline-success" id="dropdown-basic">
-                  {selectedAraziCar ? selectedAraziCar : "Araç Seçin"}
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  {cars.arazi.map((item, index) => (
-                    <Dropdown.Item key={index} eventKey={item}>
-                      {item}
-                    </Dropdown.Item>
-                  ))}
-                </Dropdown.Menu>
-              </Dropdown>
-            </Col>
-
-            <Col className="d-flex justify-content-center flex-column align-items-center">
-              <h6>Ticari Araç</h6>
-              <Dropdown onSelect={(car) => car && setSelectedTicariCar(car)}>
-                <Dropdown.Toggle variant="outline-success" id="dropdown-basic">
-                  {selectedTicariCar ? selectedTicariCar : "Araç Seçin"}
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  {cars.ticari.map((item, index) => (
-                    <Dropdown.Item key={index} eventKey={item}>
-                      {item}
-                    </Dropdown.Item>
-                  ))}
-                </Dropdown.Menu>
-              </Dropdown>
-            </Col>
-          </Row>
-
-          <Row>
-            <Col className="d-flex justify-content-center flex-column align-items-center">
-              <h6>Binek Araç</h6>
-              <Dropdown onSelect={(car) => car && setSelectedBinekArac(car)}>
-                <Dropdown.Toggle variant="outline-success" id="dropdown-basic">
-                  {selectedBinekArac ? selectedBinekArac : "Araç Seçin"}
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  {cars.binek_arac.map((item, index) => (
-                    <Dropdown.Item key={index} eventKey={item}>
-                      {item}
-                    </Dropdown.Item>
-                  ))}
-                </Dropdown.Menu>
-              </Dropdown>
-            </Col>
-
-            <Col className="d-flex justify-content-center flex-column align-items-center">
-              <h6>Hafif Ticari</h6>
-              <Dropdown onSelect={(car) => car && setSelectedHafifTicari(car)}>
-                <Dropdown.Toggle variant="outline-success" id="dropdown-basic">
-                  {selectedHafifTicari ? selectedHafifTicari : "Araç Seçin"}
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  {cars.hafif_ticari.map((item, index) => (
-                    <Dropdown.Item key={index} eventKey={item}>
-                      {item}
-                    </Dropdown.Item>
-                  ))}
-                </Dropdown.Menu>
-              </Dropdown>
-            </Col>
-
-            <Col className="d-flex justify-content-center flex-column align-items-center">
-              <h6>İş Makinası</h6>
-              <Dropdown onSelect={(car) => car && setSelectedIsMakinasi(car)}>
-                <Dropdown.Toggle variant="outline-success" id="dropdown-basic">
-                  {selectedIsMakinasi ? selectedIsMakinasi : "Araç Seçin"}
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  {cars.is_makinasi.map((item, index) => (
-                    <Dropdown.Item key={index} eventKey={item}>
-                      {item}
-                    </Dropdown.Item>
-                  ))}
-                </Dropdown.Menu>
-              </Dropdown>
-            </Col>
-          </Row>
-        </div>
-        <div className="w-100 d-flex justify-content-center">
-          <Button variant="success" type="submit" className="w-75">
-            Gönder
-          </Button>
-        </div>
         </Container>
-      </form>
+      </div>
 
-      <Container className="contact mt-5 mb-5">
-        <Row>
-          <Col sm={12} md={6}>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1510.9832801554965!2d29.93397971141101!3d40.76276021012877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb45038dc0d07b%3A0x5c6476537ae7949c!2sEftal%20Rent%20A%20Car!5e0!3m2!1str!2str!4v1726317858232!5m2!1str!2str"
-              width="100%"
-              height="450"
-              style={{ border: 0 }}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </Col>
-          <Col
-            sm={12}
-            md={6}
-            className="d-flex flex-column align-items-center mt-5 list"
-          >
-            <h2>İletişim</h2>
-            <ul className="mt-5">
-              <li>
-                <i className="bi bi-telephone-forward-fill"></i>
-                <span>0555 555 55 55</span>
-              </li>
-              <li>
-                <i className="bi bi-telephone-forward-fill"></i>
-                <span>0555 555 55 55</span>
-              </li>
-              <li>
-                <i className="bi bi-envelope-fill"></i>
-                <span>info@eftalrentacar.com</span>
-              </li>
-              <li>
-                <i className="bi bi-geo-alt-fill"></i>
-                <span>konum bilgilerimiz KOCAELİ</span>
-              </li>
-            </ul>
-          </Col>
-        </Row>
-      </Container>
+      <div className="form-div mb-5">
+        <Container className="d-flex justify-content-center">
+          <form action="https://formsubmit.co/sinan.hasil61@gmail.com">
+            <div className="d-flex justify-content-between">
+              {/* MARKA */}
+              <div className="d-flex flex-column gap-1 align-items-center">
+                <Dropdown>
+                  <Dropdown.Toggle
+                    variant="outline-primary"
+                    id="dropdown-basic"
+                  >
+                    {selectedBrand}
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu>
+                    {brand.map((item, index) => {
+                      const [brandName] = Object.keys(item);
+                      return (
+                        <Dropdown.Item
+                          key={index}
+                          onClick={() => handleBrandSelect(brandName)}
+                        >
+                          {brandName}
+                        </Dropdown.Item>
+                      );
+                    })}
+                  </Dropdown.Menu>
+                </Dropdown>
+              </div>
+
+              {/* MODEL */}
+              <div className="d-flex flex-column gap-1 align-items-center">
+                <Dropdown>
+                  <Dropdown.Toggle
+                    variant="outline-primary"
+                    id="dropdown-basic"
+                  >
+                    {selectedModel}
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu>
+                    {models.length > 0 ? (
+                      models.map((model, index) => (
+                        <Dropdown.Item
+                          key={index}
+                          onClick={() => handleModelSelect(model)}
+                        >
+                          {model}
+                        </Dropdown.Item>
+                      ))
+                    ) : (
+                      <Dropdown.Item disabled>Marka Seçiniz</Dropdown.Item>
+                    )}
+                  </Dropdown.Menu>
+                </Dropdown>
+              </div>
+
+              {/* Kiralama Süresi Seçimi */}
+              <div className="d-flex flex-column gap-1 align-items-center">
+                <Dropdown>
+                  <Dropdown.Toggle
+                    variant="outline-primary"
+                    id="dropdown-basic"
+                  >
+                    {selectedPeriod}
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu>
+                    {rentalPeriods.map((period, index) => (
+                      <Dropdown.Item
+                        key={index}
+                        onClick={() => handlePeriodSelect(period)}
+                      >
+                        {period}
+                      </Dropdown.Item>
+                    ))}
+                  </Dropdown.Menu>
+                </Dropdown>
+              </div>             
+
+              {/* Araç adedi seçimi */}
+              <div className="d-flex flex-column gap-1 align-items-center">
+                <div>
+                  <ToggleButtonGroup
+                    type="checkbox"
+                    value={value}
+                    onChange={handleChange}
+                  >
+                    <ToggleButton id="tbg-btn-1" onClick={decrement} value={1}>
+                      -
+                    </ToggleButton>
+                    <ToggleButton id="tbg-btn-2" value={2}>
+                      <span>{quantity}</span>
+                    </ToggleButton>
+                    <ToggleButton id="tbg-btn-3" onClick={increment} value={3}>
+                      +
+                    </ToggleButton>
+                  </ToggleButtonGroup>
+                </div>
+              </div>
+            </div>
+
+            <div className="person mt-5">
+              <h4 className="text-center">Kişisel Bilgiler</h4>
+              <Container className="mt-4">
+                <Row className="gap-4">
+                  <Col md={5}>
+                    <h6>Müşteri Tipi</h6>
+                    <div className="d-flex gap-3">
+                      <div>
+                        <input type="checkbox" id="" /> <span>Bireysel</span>
+                      </div>
+                      <div>
+                        <input type="checkbox" id="" />{" "}
+                        <span>Şahıs Şirketi</span>
+                      </div>
+                      <div>
+                        <input type="checkbox" id="" />{" "}
+                        <span>Ticari Şirket</span>
+                      </div>
+                    </div>
+                  </Col>
+                  <Col>
+                    <label htmlFor="name">
+                      <small>Adınız</small>
+                    </label>
+                    <Form.Control required type="text" id="name" />
+                  </Col>
+                  <Col>
+                    <label htmlFor="lastName">
+                      <small>Soyadınız</small>
+                    </label>
+                    <Form.Control required id="lastName" type="text" />
+                  </Col>
+                </Row>
+
+                <Row className="mt-4 gap-4">
+                  <Col md={5}>
+                    <label htmlFor="tc">
+                      <small>TC Kimlik No</small>
+                    </label>
+                    <Form.Control required id="tc" type="number" />
+                  </Col>
+
+                  <Col>
+                    <label htmlFor="city">
+                      <small className="text-muted">Şehir</small>
+                    </label>
+                    <Form.Control
+                      id="city"
+                      required
+                      type="text"
+                      defaultValue={"Kocaeli"}
+                      disabled
+                    />
+                  </Col>
+                  <Col className="d-flex flex-column align-items-center">
+                    <label htmlFor="">
+                      <small>İlçe Seç</small>
+                    </label>
+                    <div className="w-100">
+                      <Dropdown>
+                        <Dropdown.Toggle
+                          variant="outline-primary"
+                          id="dropdown-basic"
+                          className="w-100"
+                        >
+                          Başiskele
+                        </Dropdown.Toggle>
+
+                        <Dropdown.Menu>
+                          {ilceler.map((ilce, index) => {
+                            return (
+                              <>
+                                <Dropdown.Item key={index}>
+                                  {ilce}
+                                </Dropdown.Item>
+                              </>
+                            );
+                          })}
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </div>
+                  </Col>
+                </Row>
+                <Row className="mt-4 gap-4">
+                  <Col>
+                    <label htmlFor="tel">
+                      <small>Tel No</small>
+                    </label>
+                    <Form.Control required id="tel" type="number" />
+                  </Col>
+                  <Col className="d-flex flex-column">
+                    <label htmlFor="birtDate">
+                      <small>Doğum Tarihi</small>
+                    </label>
+                    <input
+                      type="date"
+                      id="birtDate"
+                      style={{
+                        height: "35px",
+                        border: "1px solid #dee2e6",
+                        borderRadius: "5px",
+                        padding: "0 5px",
+                      }}
+                    />
+                  </Col>
+                  <Col>
+                    <Form.Control
+                      as="textarea"
+                      placeholder="Adresiniz"
+                      style={{ height: "100px" }}
+                    />
+                  </Col>
+                </Row>
+              </Container>
+            </div>
+            <Button onClick={handleWhatsAppSend}>Talep Et</Button>
+          </form>
+        </Container>
+      </div>
     </>
   );
 };

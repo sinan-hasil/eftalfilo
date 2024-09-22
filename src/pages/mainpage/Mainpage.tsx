@@ -5,11 +5,12 @@ import carouselImg1 from "../../images/yansi-keim-dBkgMrlyjBQ-unsplash.jpg";
 import carouselImg2 from "../../images/pexels-mikebirdy-120049.jpg";
 import clio from "../../images/clio.png";
 import transit from "../../images/2-ford.png";
-import courier from "../../images/courier.jpg";
+import courier from "../../images/courier.webp";
 import ranger from "../../images/fordranger.png";
 import vito from "../../images/vito-tourer@2x.png";
 import vinc from "../cars/cars-img/sepetli-vinc_1-4000x9000.webp";
-import descImg from "../../images/WhatsApp Görsel 2024-09-13 saat 15.00.58_da9e173e.jpg";
+import descImg from "../../images/desc1.jpg";
+import descImg1 from "../../images/cardgörsel.jpg";
 import {
   Accordion,
   Button,
@@ -57,131 +58,199 @@ const Mainpage = () => {
         </Carousel.Item>
       </Carousel>
 
-      <Container className="mt-5 bg-dark py-5 rounded tab-container">
-        <Tabs
-          defaultActiveKey="home"
-          id="justify-tab-example"
-          className="mb-5 mt-5 fw-bold"
-          justify
-        >
-          <Tab eventKey="home" title="Binek Araç">
-            <div className="d-flex justify-content-center text-white">
-              <img
-                src={clio}
-                style={{ width: "500px", height: "250px" }}
-                alt="Binek Araç"
-                className="img-fluid"
-              />
-            </div>
-          </Tab>
-          <Tab eventKey="profile" title="Hafif Ticari">
-            <div className="d-flex justify-content-center">
-              <img
-                src={courier}
-                style={{ width: "500px", height: "250px" }}
-                alt="Hafif Ticari"
-                className="courier-tab"
-              />
-            </div>
-          </Tab>
-          <Tab eventKey="longer-tab" title="Ticari">
-            <div className="d-flex justify-content-center">
-              <img
-                src={transit}
-                style={{ width: "500px", height: "250px" }}
-                alt="Ticari"
-                className="img-fluid"
-              />
-            </div>
-          </Tab>
-          <Tab eventKey="contact1" title="Arazi">
-            <div className="d-flex justify-content-center">
-              <img
-                src={ranger}
-                style={{ width: "500px", height: "250px" }}
-                alt="Arazi"
-                className="img-fluid"
-              />
-            </div>
-          </Tab>
-          <Tab eventKey="contact2" title="VİP">
-            <div className="d-flex justify-content-center">
-              <img
-                src={vito}
-                style={{ width: "500px", height: "250px" }}
-                alt="VİP"
-                className="img-fluid"
-              />
-            </div>
-          </Tab>
-          <Tab eventKey="contact3" title="İş Makinası">
-            <div className="d-flex justify-content-center">
-              <img
-                src={vinc}
-                style={{ width: "500px", height: "250px" }}
-                alt="İş Makinası"
-                className="img-fluid"
-              />
-            </div>
-          </Tab>
-        </Tabs>
-      </Container>
+      <div className="tab">
+        <Container>
+          <Tabs
+            defaultActiveKey="profile"
+            id="uncontrolled-tab-example"
+            className="mb-3 mt-5 d-flex justify-content-center"
+          >
+            <Tab eventKey="home" title="Binek Araç" className="text-dark">
+              <Row className="align-items-center">
+                <Col>
+                  <img
+                    src={clio}
+                    style={{ width: "500px", height: "250px" }}
+                    alt="Binek Araç"
+                    className="img-fluid"
+                  />
+                </Col>
+                <Col>
+                  <p>
+                    Eftal Rent a Car, geniş bir binek araç filosu ile
+                    müşterilerine konforlu ve güvenilir çözümler sunar. Şehir
+                    içi ve uzun yolculuklar için ideal olan binek araçlar, yakıt
+                    tasarrufu ve rahatlık sağlar. Eftal Rent a Car, ekonomik
+                    araçlardan lüks segment araçlara kadar farklı seçeneklerle,
+                    her ihtiyaca ve bütçeye uygun kiralama hizmeti sunmaktadır.
+                    Günlük veya uzun süreli kiralama seçenekleriyle, Eftal Rent
+                    a Car, yolculuklarınızı daha keyifli hale getirir.
+                  </p>
+                </Col>
+              </Row>
+            </Tab>
+            <Tab eventKey="profile" title="Hafif Ticari">
+              <Row className="align-items-center">
+                <Col>
+                  <img
+                    src={courier}
+                    style={{ width: "500px", height: "250px" }}
+                    alt="Hafif Ticari"
+                    className="courier-tab"
+                  />
+                </Col>
+                <Col>
+                  <p>
+                    Eftal Rent a Car, binek araçların yanı sıra hafif ticari
+                    araç kiralama hizmeti de sunmaktadır. Hafif ticari araçlar,
+                    geniş iç hacimleri ve yük taşıma kapasiteleriyle iş amaçlı
+                    kullanım için idealdir. Hem şehir içi hem de şehir dışı
+                    taşımacılıkta pratik çözümler sağlayan bu araçlar, ekonomik
+                    yakıt tüketimiyle de tercih edilmektedir. Eftal Rent a Car,
+                    farklı iş ihtiyaçlarına uygun hafif ticari araç
+                    seçenekleriyle, müşterilerine güvenilir ve esnek kiralama
+                    hizmetleri sunar.
+                  </p>
+                </Col>
+              </Row>
+            </Tab>
+            <Tab eventKey="ticari" title="Ticari">
+              <Row className="align-items-center">
+                <Col>
+                  <img
+                    src={transit}
+                    style={{ width: "400px", height: "300px" }}
+                    alt="Ticari"
+                    className="img-fluid"
+                  />
+                </Col>
+                <Col>
+                  <p>
+                    Eftal Rent a Car, binek araçların yanı sıra hafif ticari
+                    araç kiralama hizmeti de sunmaktadır. Hafif ticari araçlar,
+                    geniş iç hacimleri ve yük taşıma kapasiteleriyle iş amaçlı
+                    kullanım için idealdir. Hem şehir içi hem de şehir dışı
+                    taşımacılıkta pratik çözümler sağlayan bu araçlar, ekonomik
+                    yakıt tüketimiyle de tercih edilmektedir. Eftal Rent a Car,
+                    farklı iş ihtiyaçlarına uygun hafif ticari araç
+                    seçenekleriyle, müşterilerine güvenilir ve esnek kiralama
+                    hizmetleri sunar.
+                  </p>
+                </Col>
+              </Row>
+            </Tab>
+            <Tab eventKey="arazi" title="Arazi">
+              <Row className="align-items-center">
+                <Col>
+                  <img
+                    src={ranger}
+                    style={{ width: "400px", height: "250px" }}
+                    alt="Arazi"
+                    className="img-fluid"
+                  />
+                </Col>
+                <Col>
+                  <p>
+                    Eftal Rent a Car, binek ve hafif ticari araçların yanı sıra
+                    arazi araçlarıyla da hizmet sunmaktadır. Zorlu yol
+                    koşullarında yüksek performans gösteren arazi araçları,
+                    güçlü motorları ve dört çeker sistemleriyle özellikle
+                    off-road sürüşler için idealdir. Hem iş seyahatleri hem de
+                    macera dolu yolculuklar için tercih edilen bu araçlar,
+                    konfor ve dayanıklılığı bir arada sunar. Eftal Rent a Car,
+                    arazi araçlarıyla her türlü yolculuğunuzu güvenle ve keyifle
+                    tamamlamanızı sağlar.
+                  </p>
+                </Col>
+              </Row>
+            </Tab>
+            <Tab eventKey="vip" title="VİP">
+              <Row className="align-items-center">
+                <Col>
+                  <img
+                    src={vito}
+                    style={{ width: "400px", height: "270px" }}
+                    alt="VİP"
+                    className="img-fluid"
+                  />
+                </Col>
+                <Col>
+                  <p>
+                    Eftal Rent a Car, binek ve hafif ticari araçların yanı sıra
+                    arazi araçlarıyla da hizmet sunmaktadır. Zorlu yol
+                    koşullarında yüksek performans gösteren arazi araçları,
+                    güçlü motorları ve dört çeker sistemleriyle özellikle
+                    off-road sürüşler için idealdir. Hem iş seyahatleri hem de
+                    macera dolu yolculuklar için tercih edilen bu araçlar,
+                    konfor ve dayanıklılığı bir arada sunar. Eftal Rent a Car,
+                    arazi araçlarıyla her türlü yolculuğunuzu güvenle ve keyifle
+                    tamamlamanızı sağlar.
+                  </p>
+                </Col>
+              </Row>
+            </Tab>
+            <Tab eventKey="is" title="İş Makinası">
+              <Row className="align-items-center">
+                <Col>
+                  <img
+                    src={vinc}
+                    style={{ width: "400px", height: "250px" }}
+                    alt="İş Makinası"
+                    className="img-fluid"
+                  />
+                </Col>
+                <Col>
+                  <p>
+                    Eftal Rent a Car, binek ve ticari araçların yanı sıra iş
+                    makineleri kiralama hizmeti de sunmaktadır. İnşaat, tarım ve
+                    sanayi gibi sektörlerde ihtiyaç duyulan ekskavatör, forklift
+                    ve yükleyici gibi iş makineleri, yüksek performans ve
+                    dayanıklılık sunarak projelerinizi hızlı ve güvenli bir
+                    şekilde tamamlamanızı sağlar. Eftal Rent a Car, iş
+                    makineleri kiralama konusunda esnek çözümler sunarak iş
+                    süreçlerinizi kolaylaştırır ve verimliliğinizi artırır.
+                  </p>
+                </Col>
+              </Row>
+            </Tab>
+          </Tabs>
+        </Container>
+      </div>
 
-      <div id="job-description" className="job-description w-100">
+      <div id="job-description" className="job-description w-100 mb-5">
         <Container className="mt-5">
-          <h2 className="text-center mb-5">ŞİRKETİMİZ HAKKINDA</h2>
+          <h1 className="text-center mb-5">ŞİRKETİMİZ HAKKINDA</h1>
           <Row>
-            <Col
-              sm={6}
-              md={6}
-              className="d-flex flex-column justify-content-center"
-            >
-              <h5>İşte Size Güvence</h5>
+            <Col className="d-flex flex-column justify-content-center">
+              <h6>İşte Size Güvence</h6>
               <p>
-                Araç kiralamada en önemli faktörlerden biri güvenilirliktir. Biz
-                de bu bilincin farkında olarak size her zaman en güvenli ve en
-                konforlu araçlarla hizmet veriyoruz. İşte sunduğumuz güvenceler:
+                Eftal Rent a Car olarak, müşteri memnuniyeti ve güvenliği
+                önceliğimizdir. Araçlarımız düzenli bakım ve kontrollerden
+                geçerek en iyi performansı sunar. Kısa veya uzun süreli
+                kiralamalarda, size sorunsuz ve güvenilir bir hizmet sunuyoruz.
+                Profesyonel ekibimiz, her türlü ihtiyacınıza hızlı çözümlerle
+                destek sağlar.
               </p>
-              <ul>
-                <li>
-                  <h6>Bakımlı Araç Filosu:</h6>
-                  <p>
-                    Araçlarımız düzenli olarak bakım ve kontrollerden geçirilir.
-                    Böylece, yolda herhangi bir aksilik yaşamadan güvenle
-                    seyahat edebilirsiniz.
-                  </p>
-                </li>
-                <li>
-                  <h6>Yol Yardım Desteği:</h6>
-                  <p>
-                    Olası bir acil durumda, 7/24 yol yardım hizmetimiz ile size
-                    her an destek sağlıyoruz.
-                  </p>
-                </li>
-                <li>
-                  <h6>Kapsamlı Sigorta:</h6>
-                  <p>
-                    Araçlarımız, kiralama süresi boyunca kapsamlı sigorta ile
-                    korunur, böylece ekstra bir endişe taşımadan aracınızı
-                    kullanabilirsiniz.
-                  </p>
-                </li>
-                <li>
-                  <h6>Temizlik ve Hijyen:</h6>
-                  <p>
-                    Araçlarımız, hijyen standartlarına uygun şekilde temizlenir
-                    ve her kiralamada size steril bir araç teslim edilir.
-                  </p>
-                </li>
-              </ul>
             </Col>
-
-            <Col sm={6} md={6}>
-              <img
-                src={descImg}
-                className="desc-img img-fluid"
-                alt="Şirket Hakkında"
-              />
+            <Col className="d-flex justify-content-center">
+              <img src={descImg} className="cardImg1" width={200} height={200} />
+            </Col>
+          </Row>
+          <Row className="mt-5">
+            <Col className="d-flex flex-column justify-content-center">
+              <img src={descImg1} className="cardImg1" width={370} height={210} />
+            </Col>
+            <Col className="d-flex flex-column justify-content-center">
+              <h6>Bakımlı Araç Filosu</h6>
+              <p>
+                Eftal Rent a Car olarak, müşterilerimize güvenli ve sorunsuz bir
+                sürüş deneyimi sunmak için araç filomuzu düzenli olarak bakıma
+                alıyoruz. Her bir aracımız, periyodik kontrollerden geçerek
+                yüksek performans ve güvenlik standartlarına uygun hale
+                getirilir. Bakımlı araç filomuzla, yolculuklarınızda konfor ve
+                güvenliği ön planda tutarak size en iyi hizmeti sunarız. Eftal
+                Rent a Car ile her yolculukta güvence altındasınız.
+              </p>
             </Col>
           </Row>
         </Container>
