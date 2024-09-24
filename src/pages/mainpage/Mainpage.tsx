@@ -9,8 +9,6 @@ import courier from "../../images/courier.webp";
 import ranger from "../../images/fordranger.png";
 import vito from "../../images/vito-tourer@2x.png";
 import vinc from "../cars/cars-img/sepetli-vinc_1-4000x9000.webp";
-import descImg from "../../images/desc1.jpg";
-import descImg1 from "../../images/cardgörsel.jpg";
 import {
   Accordion,
   Button,
@@ -25,6 +23,8 @@ import {
 } from "react-bootstrap";
 import "./mainpage.css";
 import { Link } from "react-router-dom";
+import descimg from "../../images/descimg.jpg";
+import desc2 from "../../images/desc1.jpg";
 
 const Mainpage = () => {
   const [index, setIndex] = useState(0);
@@ -38,21 +38,21 @@ const Mainpage = () => {
         <Carousel.Item>
           <img src={carouselImg1} className="object-fit-cover" />
           <Carousel.Caption>
-            <h3>Hızlı ve Güvenilir Araç Kiralama</h3>
+            <h4>Hızlı ve Güvenilir Araç Kiralama</h4>
             <p>Konfor, Güven, Uygun Fiyat</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img src={carouselImg2} className="object-fit-cover" />
           <Carousel.Caption>
-            <h3>Kolay Araç Kiralama Deneyimi</h3>
+            <h4>Kolay Araç Kiralama Deneyimi</h4>
             <p>Hız, Esneklik, Memnuniyet</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img src={carouselImg} className="object-fit-cover" />
           <Carousel.Caption>
-            <h3>Her Yola Uygun Araçlar</h3>
+            <h4>Her Yola Uygun Araçlar</h4>
             <p>Kalite, Konfor, Güvenlik</p>
           </Carousel.Caption>
         </Carousel.Item>
@@ -217,43 +217,92 @@ const Mainpage = () => {
         </Container>
       </div>
 
-      <div id="job-description" className="job-description w-100 mb-5">
-        <Container className="mt-5">
-          <h1 className="text-center mb-5">ŞİRKETİMİZ HAKKINDA</h1>
-          <Row>
-            <Col className="d-flex flex-column justify-content-center">
-              <h6>İşte Size Güvence</h6>
-              <p>
-                Eftal Rent a Car olarak, müşteri memnuniyeti ve güvenliği
-                önceliğimizdir. Araçlarımız düzenli bakım ve kontrollerden
-                geçerek en iyi performansı sunar. Kısa veya uzun süreli
-                kiralamalarda, size sorunsuz ve güvenilir bir hizmet sunuyoruz.
-                Profesyonel ekibimiz, her türlü ihtiyacınıza hızlı çözümlerle
-                destek sağlar.
-              </p>
-            </Col>
-            <Col className="d-flex justify-content-center">
-              <img src={descImg} className="cardImg1" width={200} height={200} />
-            </Col>
-          </Row>
-          <Row className="mt-5">
-            <Col className="d-flex flex-column justify-content-center">
-              <img src={descImg1} className="cardImg1" width={370} height={210} />
-            </Col>
-            <Col className="d-flex flex-column justify-content-center">
-              <h6>Bakımlı Araç Filosu</h6>
-              <p>
-                Eftal Rent a Car olarak, müşterilerimize güvenli ve sorunsuz bir
-                sürüş deneyimi sunmak için araç filomuzu düzenli olarak bakıma
-                alıyoruz. Her bir aracımız, periyodik kontrollerden geçerek
-                yüksek performans ve güvenlik standartlarına uygun hale
-                getirilir. Bakımlı araç filomuzla, yolculuklarınızda konfor ve
-                güvenliği ön planda tutarak size en iyi hizmeti sunarız. Eftal
-                Rent a Car ile her yolculukta güvence altındasınız.
-              </p>
-            </Col>
-          </Row>
-        </Container>
+      <div id="job-description" className="job-description w-100 bg-danger">
+        <div className="d-flex justify-content-between">
+          <div className="desc-img">
+            <img src={descimg} width={900} />
+          </div>
+
+          <Container style={{ padding: "100px 200px" }}>
+            <Row>
+              <Col md={12}>
+                <h4 className="text-white mb-4">Neden Eftal?</h4>
+                <p className="text-white">
+                  Eftal Rent a Car olarak, yılların deneyimi ve profesyonel
+                  hizmet anlayışımızla araç kiralama sektöründe siz değerli
+                  müşterilerimize en iyi hizmeti sunmayı hedefliyoruz. Kocaeli
+                  başta olmak üzere geniş bir hizmet ağı ile bireysel ve
+                  kurumsal araç kiralama ihtiyaçlarınızı karşılamaktayız.
+                </p>
+              </Col>
+              <Col className="mt-5">
+                <h4 className="text-white mb-4">Neler Sunuyoruz?</h4>
+                <p className="text-white">
+                  Filomuzda, her bütçeye uygun çeşitli marka ve model araç
+                  seçenekleri sunuyor, ihtiyacınıza göre günlük, aylık ve yıllık
+                  kiralama imkânları sağlıyoruz. Güvenli, konforlu ve temiz
+                  araçlarımızla yolculuklarınızın keyifli geçmesi için her
+                  detayı düşünüyoruz.
+                </p>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      </div>
+
+      <div className="job-desc2">
+        <div className="d-flex justify-content-between bg-primary">
+          <Container style={{ padding: "100px 100px" }}>
+            <Row>
+              <Col>
+                <ul style={{ listStyle: "none", color: "white" }}>
+                  <li className="mb-5">
+                    <h4>Zengin Araç Filosu</h4>
+                    <p>
+                      Ekonomik araçlardan lüks modellere, ticari araçlardan iş
+                      makinelerine kadar geniş bir yelpazeye sahibiz.
+                    </p>
+                  </li>
+                  <li className="mb-5">
+                    <h4>Esnek Kiralama Seçenekleri</h4>
+                    <p>
+                      Günlük, haftalık, aylık ve yıllık kiralama seçenekleriyle
+                      esneklik sunuyoruz.
+                    </p>
+                  </li>
+                  <li className="mb-5">
+                    <h4>7/24 Müşteri Desteği</h4>
+                    <p>
+                      Seyahatiniz boyunca ihtiyaç duyabileceğiniz her an
+                      yanınızdayız.
+                    </p>
+                  </li>
+                  <li className="mb-5">
+                    <h4>Uygun Fiyat Garantisi</h4>
+                    <p>
+                      Müşterilerimize en uygun fiyatları sunarak bütçenizi
+                      zorlamadan kaliteli hizmet almanızı sağlıyoruz.
+                    </p>
+                  </li>
+                  <li className="mb-5">
+                    <h4>Kolay Rezervasyon</h4>
+                    <p>
+                      Web sitemiz üzerinden hızlı ve kolay bir şekilde aracınızı
+                      rezerve edebilirsiniz.
+                    </p>
+                  </li>
+                  <Nav.Link as={Link} to={"/contact"}>
+                    <Button variant="danger">
+                      Whatsapp Üzerinden Rezervasyon Yap
+                    </Button>
+                  </Nav.Link>
+                </ul>
+              </Col>
+            </Row>
+          </Container>
+
+          <img src={desc2} width={1003} />
+        </div>
       </div>
 
       <div className="services">
