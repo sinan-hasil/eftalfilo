@@ -67,7 +67,7 @@ const Mainpage = () => {
           >
             <Tab eventKey="home" title="Binek Araç" className="text-dark">
               <Row className="align-items-center">
-                <Col>
+                <Col sm={12} md={6}>
                   <img
                     src={clio}
                     style={{ width: "500px", height: "250px" }}
@@ -91,7 +91,7 @@ const Mainpage = () => {
             </Tab>
             <Tab eventKey="profile" title="Hafif Ticari">
               <Row className="align-items-center">
-                <Col>
+                <Col sm={12} md={6}>
                   <img
                     src={courier}
                     style={{ width: "500px", height: "250px" }}
@@ -116,7 +116,7 @@ const Mainpage = () => {
             </Tab>
             <Tab eventKey="ticari" title="Ticari">
               <Row className="align-items-center">
-                <Col>
+                <Col sm={12} md={6}>
                   <img
                     src={transit}
                     style={{ width: "400px", height: "300px" }}
@@ -141,7 +141,7 @@ const Mainpage = () => {
             </Tab>
             <Tab eventKey="arazi" title="Arazi">
               <Row className="align-items-center">
-                <Col>
+                <Col sm={12} md={6}>
                   <img
                     src={ranger}
                     style={{ width: "400px", height: "250px" }}
@@ -166,7 +166,7 @@ const Mainpage = () => {
             </Tab>
             <Tab eventKey="vip" title="VİP">
               <Row className="align-items-center">
-                <Col>
+                <Col sm={12} md={6}>
                   <img
                     src={vito}
                     style={{ width: "400px", height: "270px" }}
@@ -191,7 +191,7 @@ const Mainpage = () => {
             </Tab>
             <Tab eventKey="is" title="İş Makinası">
               <Row className="align-items-center">
-                <Col>
+                <Col sm={12} md={6}>
                   <img
                     src={vinc}
                     style={{ width: "400px", height: "250px" }}
@@ -217,92 +217,91 @@ const Mainpage = () => {
         </Container>
       </div>
 
-      <div id="job-description" className="job-description w-100 bg-danger">
-        <div className="d-flex justify-content-between">
-          <div className="desc-img">
-            <img src={descimg} width={900} />
-          </div>
-
-          <Container style={{ padding: "100px 200px" }}>
-            <Row>
-              <Col md={12}>
-                <h4 className="text-white mb-4">Neden Eftal?</h4>
-                <p className="text-white">
-                  Eftal Rent a Car olarak, yılların deneyimi ve profesyonel
-                  hizmet anlayışımızla araç kiralama sektöründe siz değerli
-                  müşterilerimize en iyi hizmeti sunmayı hedefliyoruz. Kocaeli
-                  başta olmak üzere geniş bir hizmet ağı ile bireysel ve
-                  kurumsal araç kiralama ihtiyaçlarınızı karşılamaktayız.
-                </p>
-              </Col>
-              <Col className="mt-5">
-                <h4 className="text-white mb-4">Neler Sunuyoruz?</h4>
-                <p className="text-white">
-                  Filomuzda, her bütçeye uygun çeşitli marka ve model araç
-                  seçenekleri sunuyor, ihtiyacınıza göre günlük, aylık ve yıllık
-                  kiralama imkânları sağlıyoruz. Güvenli, konforlu ve temiz
-                  araçlarımızla yolculuklarınızın keyifli geçmesi için her
-                  detayı düşünüyoruz.
-                </p>
-              </Col>
-            </Row>
-          </Container>
-        </div>
+      <div className="job-description bg-danger" id="job-description">
+        <Row>
+          <Col md={12} lg={6} xl={6} xxl={6}>
+            <img src={descimg} className="egea" />
+          </Col>
+          <Col
+            md={12}
+            lg={6}
+            xl={6}
+            xxl={6}
+            className="d-flex flex-column justify-content-center text-col"
+          >
+            <h4 className="text-white">Neden Eftal?</h4>
+            <p className="text-white">
+              Eftal Rent a Car olarak, yılların deneyimi ve profesyonel hizmet
+              anlayışımızla araç kiralama sektöründe siz değerli <br />
+              müşterilerimize en iyi hizmeti sunmayı hedefliyoruz. Kocaeli başta
+              olmak üzere geniş bir hizmet ağı ile bireysel ve kurumsal araç
+              kiralama ihtiyaçlarınızı karşılamaktayız.
+            </p>
+            <p className="text-white">
+              Eftal Rent a Car, müşteri memnuniyetini ön planda tutarak,
+              güvenilir ve konforlu araç kiralama hizmetleri sunan lider bir
+              firmadır. Yılların getirdiği tecrübe ve geniş araç filomuzla, hem
+              bireysel hem de kurumsal müşterilerimize en iyi hizmeti sağlama
+              hedefindeyiz. Misyonumuz, en yeni modellerle güncellediğimiz
+              araçlarımız ve esnek kiralama seçeneklerimizle müşterilerimizin
+              seyahat deneyimini kolaylaştırmaktır. Eftal Rent a Car olarak,
+              ihtiyaçlarınıza en uygun araçları rekabetçi fiyatlarla sunarak
+              seyahatinizi sorunsuz hale getiriyoruz.
+            </p>
+          </Col>
+        </Row>
       </div>
 
-      <div className="job-desc2">
-        <div className="d-flex justify-content-between bg-primary">
-          <Container style={{ padding: "100px 100px" }}>
-            <Row>
-              <Col>
-                <ul style={{ listStyle: "none", color: "white" }}>
-                  <li className="mb-5">
-                    <h4>Zengin Araç Filosu</h4>
-                    <p>
-                      Ekonomik araçlardan lüks modellere, ticari araçlardan iş
-                      makinelerine kadar geniş bir yelpazeye sahibiz.
-                    </p>
-                  </li>
-                  <li className="mb-5">
-                    <h4>Esnek Kiralama Seçenekleri</h4>
-                    <p>
-                      Günlük, haftalık, aylık ve yıllık kiralama seçenekleriyle
-                      esneklik sunuyoruz.
-                    </p>
-                  </li>
-                  <li className="mb-5">
-                    <h4>7/24 Müşteri Desteği</h4>
-                    <p>
-                      Seyahatiniz boyunca ihtiyaç duyabileceğiniz her an
-                      yanınızdayız.
-                    </p>
-                  </li>
-                  <li className="mb-5">
-                    <h4>Uygun Fiyat Garantisi</h4>
-                    <p>
-                      Müşterilerimize en uygun fiyatları sunarak bütçenizi
-                      zorlamadan kaliteli hizmet almanızı sağlıyoruz.
-                    </p>
-                  </li>
-                  <li className="mb-5">
-                    <h4>Kolay Rezervasyon</h4>
-                    <p>
-                      Web sitemiz üzerinden hızlı ve kolay bir şekilde aracınızı
-                      rezerve edebilirsiniz.
-                    </p>
-                  </li>
-                  <Nav.Link as={Link} to={"/contact"}>
-                    <Button variant="danger">
-                      Whatsapp Üzerinden Rezervasyon Yap
-                    </Button>
-                  </Nav.Link>
-                </ul>
-              </Col>
-            </Row>
-          </Container>
-
-          <img src={desc2} width={1003} />
-        </div>
+      <div className="job-desc2 bg-primary">
+        <Row>
+          <Col md={12} lg={6} xl={6} xxl={6} className="d-flex flex-column justify-content-center text-col">
+            <ul className="mt-5" style={{ listStyle: "none", color: "white" }}>
+              <li className="mb-5">
+                <h4>Zengin Araç Filosu</h4>
+                <p>
+                  Ekonomik araçlardan lüks modellere, ticari araçlardan iş
+                  makinelerine kadar geniş bir yelpazeye sahibiz.
+                </p>
+              </li>
+              <li className="mb-5">
+                <h4>Esnek Kiralama Seçenekleri</h4>
+                <p>
+                  Günlük, haftalık, aylık ve yıllık kiralama seçenekleriyle
+                  esneklik sunuyoruz.
+                </p>
+              </li>
+              <li className="mb-5">
+                <h4>7/24 Müşteri Desteği</h4>
+                <p>
+                  Seyahatiniz boyunca ihtiyaç duyabileceğiniz her an
+                  yanınızdayız.
+                </p>
+              </li>
+              <li className="mb-5">
+                <h4>Uygun Fiyat Garantisi</h4>
+                <p>
+                  Müşterilerimize en uygun fiyatları sunarak bütçenizi
+                  zorlamadan kaliteli hizmet almanızı sağlıyoruz.
+                </p>
+              </li>
+              <li className="mb-5">
+                <h4>Kolay Rezervasyon</h4>
+                <p>
+                  Web sitemiz üzerinden hızlı ve kolay bir şekilde aracınızı
+                  rezerve edebilirsiniz.
+                </p>
+              </li>
+              <Nav.Link as={Link} to={"/contact"}>
+                <Button variant="danger">
+                  Whatsapp Üzerinden Rezervasyon Yap
+                </Button>
+              </Nav.Link>
+            </ul>
+          </Col>
+          <Col className="p-0" md={12} lg={6} xl={12} xxl={6}>
+            <img src={desc2} />
+          </Col>
+        </Row>
       </div>
 
       <div className="services">

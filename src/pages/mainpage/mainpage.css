@@ -14,10 +14,18 @@ body {
 
 .job-description {
   margin-top: 50px;
-  border: none;
 }
-.job-description .cardImg1 {
-  border-radius: 10px;
+.job-description img {
+  width: 100%;
+  height: 100%;
+}
+.job-description p {
+  padding-right: 50px;
+}
+
+.job-desc2 img {
+  width: 100%;
+  height: 100%;
 }
 
 .services {
