@@ -68,11 +68,7 @@ const Mainpage = () => {
             <Tab eventKey="home" title="Binek Araç" className="text-dark">
               <Row className="align-items-center">
                 <Col className="d-flex justify-content-center" sm={12} md={6}>
-                  <img
-                    src={clio}                    
-                    alt="Binek Araç"
-                    className="img-fluid"
-                  />
+                  <img src={clio} alt="Binek Araç" className="img-fluid" />
                 </Col>
                 <Col>
                   <p>
@@ -218,16 +214,10 @@ const Mainpage = () => {
 
       <div className="job-description bg-danger" id="job-description">
         <Row>
-          <Col className="m-0 p-0" md={12} lg={6} xl={6} xxl={6}>
+          <Col sm={12} md={6} className="p-0">
             <img src={descimg} className="egea" />
           </Col>
-          <Col
-            md={12}
-            lg={6}
-            xl={6}
-            xxl={6}
-            className="p-5 w-100 d-flex flex-column justify-content-center text-col"
-          >
+          <Col sm={12} md={6} className="p-5 d-flex justify-content-center flex-column">
             <h4 className="text-white">Neden Eftal?</h4>
             <p className="text-white">
               Eftal Rent a Car olarak, yılların deneyimi ve profesyonel hizmet
@@ -248,7 +238,15 @@ const Mainpage = () => {
               seyahatinizi sorunsuz hale getiriyoruz.
             </p>
           </Col>
-          <Col sm={12} md={6} lg={6} xl={6} xxl={6} className="order-1 order-sm-2 bg-primary p-5 m-0 d-flex flex-column justify-content-center text-col">
+          
+          <Col
+            sm={12}
+            md={6}
+            lg={6}
+            xl={6}
+            xxl={6}
+            className="order-2 order-sm-2 bg-primary p-5 m-0 d-flex flex-column justify-content-center text-col"
+          >
             <ul className="mt-5" style={{ listStyle: "none", color: "white" }}>
               <li className="mb-5">
                 <h4>Zengin Araç Filosu</h4>
@@ -292,63 +290,18 @@ const Mainpage = () => {
               </Nav.Link>
             </ul>
           </Col>
-          <Col className="order-2 order-sm-1 p-0 m-0"sm={12} md={6} lg={6} xl={6} xxl={6}>
+          <Col
+            className="order-1 order-sm-1 p-0 m-0"
+            sm={12}
+            md={6}
+            lg={6}
+            xl={6}
+            xxl={6}
+          >
             <img src={desc2} />
           </Col>
         </Row>
       </div>
-
-      {/* <div className="job-desc2 bg-primary">
-        <Row>
-          <Col sm={12} md={6} lg={6} xl={6} xxl={6} className="p-0 m-0 d-flex flex-column justify-content-center text-col">
-            <ul className="mt-5" style={{ listStyle: "none", color: "white" }}>
-              <li className="mb-5">
-                <h4>Zengin Araç Filosu</h4>
-                <p>
-                  Ekonomik araçlardan lüks modellere, ticari araçlardan iş
-                  makinelerine kadar geniş bir yelpazeye sahibiz.
-                </p>
-              </li>
-              <li className="mb-5">
-                <h4>Esnek Kiralama Seçenekleri</h4>
-                <p>
-                  Günlük, haftalık, aylık ve yıllık kiralama seçenekleriyle
-                  esneklik sunuyoruz.
-                </p>
-              </li>
-              <li className="mb-5">
-                <h4>7/24 Müşteri Desteği</h4>
-                <p>
-                  Seyahatiniz boyunca ihtiyaç duyabileceğiniz her an
-                  yanınızdayız.
-                </p>
-              </li>
-              <li className="mb-5">
-                <h4>Uygun Fiyat Garantisi</h4>
-                <p>
-                  Müşterilerimize en uygun fiyatları sunarak bütçenizi
-                  zorlamadan kaliteli hizmet almanızı sağlıyoruz.
-                </p>
-              </li>
-              <li className="mb-5">
-                <h4>Kolay Rezervasyon</h4>
-                <p>
-                  Web sitemiz üzerinden hızlı ve kolay bir şekilde aracınızı
-                  rezerve edebilirsiniz.
-                </p>
-              </li>
-              <Nav.Link as={Link} to={"/contact"}>
-                <Button variant="danger">
-                  Whatsapp Üzerinden Rezervasyon Yap
-                </Button>
-              </Nav.Link>
-            </ul>
-          </Col>
-          <Col className="p-0 m-0"sm={12} md={6} lg={6} xl={6} xxl={6}>
-            <img src={desc2} />
-          </Col>
-        </Row>
-      </div> */}
 
       <div className="services">
         <Container className="d-flex flex-column gap-5">
