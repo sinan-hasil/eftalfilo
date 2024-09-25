@@ -67,10 +67,9 @@ const Mainpage = () => {
           >
             <Tab eventKey="home" title="Binek Araç" className="text-dark">
               <Row className="align-items-center">
-                <Col sm={12} md={6}>
+                <Col className="d-flex justify-content-center" sm={12} md={6}>
                   <img
-                    src={clio}
-                    style={{ width: "500px", height: "250px" }}
+                    src={clio}                    
                     alt="Binek Araç"
                     className="img-fluid"
                   />
@@ -91,7 +90,7 @@ const Mainpage = () => {
             </Tab>
             <Tab eventKey="profile" title="Hafif Ticari">
               <Row className="align-items-center">
-                <Col sm={12} md={6}>
+                <Col className="d-flex justify-content-center" sm={12} md={6}>
                   <img
                     src={courier}
                     style={{ width: "500px", height: "250px" }}
@@ -116,7 +115,7 @@ const Mainpage = () => {
             </Tab>
             <Tab eventKey="ticari" title="Ticari">
               <Row className="align-items-center">
-                <Col sm={12} md={6}>
+                <Col className="d-flex justify-content-center" sm={12} md={6}>
                   <img
                     src={transit}
                     style={{ width: "400px", height: "300px" }}
@@ -141,7 +140,7 @@ const Mainpage = () => {
             </Tab>
             <Tab eventKey="arazi" title="Arazi">
               <Row className="align-items-center">
-                <Col sm={12} md={6}>
+                <Col className="d-flex justify-content-center" sm={12} md={6}>
                   <img
                     src={ranger}
                     style={{ width: "400px", height: "250px" }}
@@ -166,7 +165,7 @@ const Mainpage = () => {
             </Tab>
             <Tab eventKey="vip" title="VİP">
               <Row className="align-items-center">
-                <Col sm={12} md={6}>
+                <Col className="d-flex justify-content-center" sm={12} md={6}>
                   <img
                     src={vito}
                     style={{ width: "400px", height: "270px" }}
@@ -191,7 +190,7 @@ const Mainpage = () => {
             </Tab>
             <Tab eventKey="is" title="İş Makinası">
               <Row className="align-items-center">
-                <Col sm={12} md={6}>
+                <Col className="d-flex justify-content-center" sm={12} md={6}>
                   <img
                     src={vinc}
                     style={{ width: "400px", height: "250px" }}
@@ -219,7 +218,7 @@ const Mainpage = () => {
 
       <div className="job-description bg-danger" id="job-description">
         <Row>
-          <Col md={12} lg={6} xl={6} xxl={6}>
+          <Col className="m-0 p-0" md={12} lg={6} xl={6} xxl={6}>
             <img src={descimg} className="egea" />
           </Col>
           <Col
@@ -227,7 +226,7 @@ const Mainpage = () => {
             lg={6}
             xl={6}
             xxl={6}
-            className="d-flex flex-column justify-content-center text-col"
+            className="p-5 w-100 d-flex flex-column justify-content-center text-col"
           >
             <h4 className="text-white">Neden Eftal?</h4>
             <p className="text-white">
@@ -249,12 +248,7 @@ const Mainpage = () => {
               seyahatinizi sorunsuz hale getiriyoruz.
             </p>
           </Col>
-        </Row>
-      </div>
-
-      <div className="job-desc2 bg-primary">
-        <Row>
-          <Col md={12} lg={6} xl={6} xxl={6} className="d-flex flex-column justify-content-center text-col">
+          <Col sm={12} md={6} lg={6} xl={6} xxl={6} className="order-1 order-sm-2 bg-primary p-5 m-0 d-flex flex-column justify-content-center text-col">
             <ul className="mt-5" style={{ listStyle: "none", color: "white" }}>
               <li className="mb-5">
                 <h4>Zengin Araç Filosu</h4>
@@ -298,11 +292,63 @@ const Mainpage = () => {
               </Nav.Link>
             </ul>
           </Col>
-          <Col className="p-0" md={12} lg={6} xl={12} xxl={6}>
+          <Col className="order-2 order-sm-1 p-0 m-0"sm={12} md={6} lg={6} xl={6} xxl={6}>
             <img src={desc2} />
           </Col>
         </Row>
       </div>
+
+      {/* <div className="job-desc2 bg-primary">
+        <Row>
+          <Col sm={12} md={6} lg={6} xl={6} xxl={6} className="p-0 m-0 d-flex flex-column justify-content-center text-col">
+            <ul className="mt-5" style={{ listStyle: "none", color: "white" }}>
+              <li className="mb-5">
+                <h4>Zengin Araç Filosu</h4>
+                <p>
+                  Ekonomik araçlardan lüks modellere, ticari araçlardan iş
+                  makinelerine kadar geniş bir yelpazeye sahibiz.
+                </p>
+              </li>
+              <li className="mb-5">
+                <h4>Esnek Kiralama Seçenekleri</h4>
+                <p>
+                  Günlük, haftalık, aylık ve yıllık kiralama seçenekleriyle
+                  esneklik sunuyoruz.
+                </p>
+              </li>
+              <li className="mb-5">
+                <h4>7/24 Müşteri Desteği</h4>
+                <p>
+                  Seyahatiniz boyunca ihtiyaç duyabileceğiniz her an
+                  yanınızdayız.
+                </p>
+              </li>
+              <li className="mb-5">
+                <h4>Uygun Fiyat Garantisi</h4>
+                <p>
+                  Müşterilerimize en uygun fiyatları sunarak bütçenizi
+                  zorlamadan kaliteli hizmet almanızı sağlıyoruz.
+                </p>
+              </li>
+              <li className="mb-5">
+                <h4>Kolay Rezervasyon</h4>
+                <p>
+                  Web sitemiz üzerinden hızlı ve kolay bir şekilde aracınızı
+                  rezerve edebilirsiniz.
+                </p>
+              </li>
+              <Nav.Link as={Link} to={"/contact"}>
+                <Button variant="danger">
+                  Whatsapp Üzerinden Rezervasyon Yap
+                </Button>
+              </Nav.Link>
+            </ul>
+          </Col>
+          <Col className="p-0 m-0"sm={12} md={6} lg={6} xl={6} xxl={6}>
+            <img src={desc2} />
+          </Col>
+        </Row>
+      </div> */}
 
       <div className="services">
         <Container className="d-flex flex-column gap-5">

@@ -10,7 +10,7 @@ import i20 from "./cars-img/i20-beyaz.webp";
 import jugger from "./cars-img/dacia-jogger.png";
 import doblo from "./cars-img/doblo.png";
 import dobloPan from "./cars-img/doblo-panelvan.png";
-import courier from "./cars-img/11-50-59-ford-courier.png";
+import courier from "../../images/courier.webp";
 import transit from "./cars-img/transit.png";
 import jumper from "./cars-img/jumper.png";
 import boxer from "./cars-img/boxer.png";

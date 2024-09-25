@@ -28,6 +28,12 @@ body {
   height: 100%;
 }
 
+@media screen and (min-width: 768px) {
+  .job-desc2 .row {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
 .services {
   margin-top: 50px;
   padding: 50px 0;

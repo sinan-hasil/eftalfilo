@@ -63,7 +63,6 @@ const Root = () => {
                     </Nav.Link>
                   </NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href={"/#job-description"} className="d-none d-sm-block text-muted">Hakkımızda</Nav.Link>
                 <Nav.Link className="d-none d-sm-block text-muted" as={Link} to={"/contact"}>
                   İletişim
                 </Nav.Link>

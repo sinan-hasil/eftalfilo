@@ -145,7 +145,7 @@ const Contact = () => {
       <div className="bg-secondary py-5 mb-5">
         <Container className="px-5 d-flex flex-column gap-4 text-white">
           <h1 className="text-center">HEMEN TEKLİF ALIN</h1>
-          <p className="text-center px-5">
+          <p className="text-center">
             Alttaki formu doldurarak, ihtiyaçlarınıza uygun araç kiralama
             teklifinizi hemen alın. Eftal Rent a Car olarak, size en iyi hizmeti
             sunabilmek için hızlı ve kolay bir teklif süreci sağlıyoruz. Formu
@@ -431,7 +431,7 @@ const Contact = () => {
         <Container className="mb-5 mt-5 border-top py-5">
           <Row>
             <Col sm={12} md={6}>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d96702.85487404987!2d29.854647049378574!3d40.76281179692552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x14cb45038dc0d07b%3A0x5c6476537ae7949c!2sKaraba%C5%9F%2C%20Kavala%20Aparman%C4%B1%2C%20Hafiz%20Selim%20Efendi%20Sk.%20No%3A12%2F1-E%2C%2041040%20%C4%B0zmit%2FKocaeli!3m2!1d40.762841099999996!2d29.9370479!5e0!3m2!1str!2str!4v1727095976439!5m2!1str!2str" className="img-fluid" width={600} height={800} style={{border: "0"}} loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d96702.85487404987!2d29.854647049378574!3d40.76281179692552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x14cb45038dc0d07b%3A0x5c6476537ae7949c!2sKaraba%C5%9F%2C%20Kavala%20Aparman%C4%B1%2C%20Hafiz%20Selim%20Efendi%20Sk.%20No%3A12%2F1-E%2C%2041040%20%C4%B0zmit%2FKocaeli!3m2!1d40.762841099999996!2d29.9370479!5e0!3m2!1str!2str!4v1727095976439!5m2!1str!2str" className="img-fluid" style={{border: "0"}} loading="lazy"></iframe>
             </Col>
             <Col className="text-center">
               <h1>İletişim Bilgileri</h1>
