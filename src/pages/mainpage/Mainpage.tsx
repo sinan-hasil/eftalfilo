@@ -37,21 +37,21 @@ const Mainpage = () => {
       <Carousel activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item>
           <img src={carouselImg1} className="object-fit-cover" />
-          <Carousel.Caption>
+          <Carousel.Caption className="mb-5">
             <h4>Hızlı ve Güvenilir Araç Kiralama</h4>
             <p>Konfor, Güven, Uygun Fiyat</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img src={carouselImg2} className="object-fit-cover" />
-          <Carousel.Caption>
+          <Carousel.Caption className="mb-5">
             <h4>Kolay Araç Kiralama Deneyimi</h4>
             <p>Hız, Esneklik, Memnuniyet</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img src={carouselImg} className="object-fit-cover" />
-          <Carousel.Caption>
+          <Carousel.Caption className="mb-5">
             <h4>Her Yola Uygun Araçlar</h4>
             <p>Kalite, Konfor, Güvenlik</p>
           </Carousel.Caption>
@@ -63,9 +63,9 @@ const Mainpage = () => {
           <Tabs
             defaultActiveKey="profile"
             id="uncontrolled-tab-example"
-            className="mb-3 mt-5 d-flex justify-content-center"
+            className="mb-3 mt-5 d-flex justify-content-center custom-tabs"
           >
-            <Tab eventKey="home" title="Binek Araç" className="text-dark">
+            <Tab eventKey="home" title="Binek Araç" className="text-dark custom-tab">
               <Row className="align-items-center">
                 <Col className="d-flex justify-content-center" sm={12} md={6}>
                   <img src={clio} alt="Binek Araç" className="img-fluid" />
