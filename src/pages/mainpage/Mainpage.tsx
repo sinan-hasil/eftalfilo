@@ -49,28 +49,28 @@ const Mainpage = () => {
         <Carousel.Item>
           <img src={carouselImg} className="object-fit-cover" />
           <Carousel.Caption>
-            <h4>Araç Kiralama</h4>
+            <h1>ARAÇ KİRALAMA</h1>
             <p>Konfor, Güven, Uygun Fiyat</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img src={carouselImg1} className="object-fit-cover" />
           <Carousel.Caption>
-            <h4>Filo Kiralama</h4>
+            <h1>FİLO KİRALAMA</h1>
             <p>Hız, Esneklik, Memnuniyet</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img src={carouselImg3} className="object-fit-cover" />
           <Carousel.Caption>
-            <h4>Her Yola Uygun Araçlar</h4>
+            <h1>HER YOLA UYGUN ARAÇLAR</h1>
             <p>Kalite, Konfor, Güvenlik</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img src={carouselImg2} className="object-fit-cover" />
           <Carousel.Caption>
-            <h4>Ticari Araç Kiralama</h4>
+            <h1>TİCARİ ARAÇLAR</h1>
             <p>İşiniz İçin Hazır</p>
           </Carousel.Caption>
         </Carousel.Item>
@@ -263,7 +263,7 @@ const Mainpage = () => {
             lg={6}
             xl={6}
             xxl={6}
-            className="order-2 order-sm-2 bg-primary p-5 m-0 d-flex flex-column justify-content-center text-col"
+            className="order-2 order-sm-1 bg-primary p-5 m-0 d-flex flex-column justify-content-center text-col"
           >
             <ul className="mt-5" style={{ listStyle: "none", color: "white" }}>
               <li className="mb-5">
@@ -309,7 +309,7 @@ const Mainpage = () => {
             </ul>
           </Col>
           <Col
-            className="order-1 order-sm-1 p-0 m-0"
+            className="order-2 order-sm-2 p-0 m-0"
             sm={12}
             md={6}
             lg={6}

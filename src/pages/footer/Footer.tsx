@@ -17,7 +17,7 @@ const Footer = () => {
           <div className="col col-sm-12 col-md-4">
             <img src={logo} width={"100px"} />
             <p style={{width: "100%"}}>
-              Özel Transfer Hizmetlerimizde zamanınızı özverili ve etkili kullanmanıza yardımcı olmaya çalışıyor ve her hizmet alanımızda olduğu gibi bu hizmet alanımızda devam ediyoruz.
+              Özel Transfer Hizmetlerimizde zamanınızı özverili <br /> ve etkili kullanmanıza yardımcı olmaya çalışıyor <br /> ve her hizmet alanımızda olduğu gibi bu hizmet alanımızda devam ediyoruz.
             </p>
           </div>
           <div className="col col-sm-12 col-md-4">
@@ -33,7 +33,7 @@ const Footer = () => {
               <li>Çerez Politikası</li>
             </ul>
           </div>
-          <div className="col col-sm-12 col-md-3">
+          <div className="col col-sm-12 col-md-4">
             <h4>İletişim</h4>
             <ul>
               <li>

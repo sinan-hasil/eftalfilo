@@ -260,7 +260,7 @@ const Contact = () => {
               <h4 className="text-center">Kişisel Bilgiler</h4>
               <Container className="mt-4">
                 <Row className="gap-4">
-                  <Col md={6}>
+                  <Col md={6} className="p-0">
                     <h6>Müşteri Tipi</h6>
                     <div className="d-flex gap-3">
                       <div>
@@ -326,7 +326,7 @@ const Contact = () => {
                 </Row>
 
                 <Row className="mt-4 gap-4">
-                  <Col md={5}>
+                  <Col md={5} className="p-0">
                     <label htmlFor="tc">
                       <small>TC Kimlik No</small>
                     </label>
@@ -437,7 +437,7 @@ const Contact = () => {
               <h1>İletişim Bilgileri</h1>
               <ul className="mt-5" style={{listStyle: "none"}}>
               <li className="mt-4">
-                <span className="text-center"><FaPhoneAlt /><span>0555  555  55 55</span></span>
+                <span className="text-center d-flex gap-2 align-items-center justify-content-center"><FaPhoneAlt /><span>0531 326 08 53</span></span>
               </li>
               
               <li className="mt-4">
