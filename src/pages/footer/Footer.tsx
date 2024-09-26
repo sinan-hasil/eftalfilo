@@ -38,7 +38,7 @@ const Footer = () => {
             <ul>
               <li>
                 <i className="bi bi-telephone-forward-fill"></i>
-                <span className="d-flex gap-3 align-items-center"><FaPhoneAlt /><span>0555  555  55 55</span></span>
+                <span className="d-flex gap-3 align-items-center"><FaPhoneAlt /><span>0531 326 0853</span></span>
               </li>
               
               <li>

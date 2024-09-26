@@ -1,8 +1,9 @@
-import { SetStateAction, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
-import carouselImg from "../../images/pexels-riciardus-228094.jpg";
-import carouselImg1 from "../../images/yansi-keim-dBkgMrlyjBQ-unsplash.jpg";
-import carouselImg2 from "../../images/pexels-mikebirdy-120049.jpg";
+import carouselImg from "../../images/fiat egea carousel.jpg";
+import carouselImg1 from "../../images/fiat doblo.jpg";
+import carouselImg2 from "../../images/transit group.jpg";
+import carouselImg3 from "../../images/l-200.jpg";
 import clio from "../../images/clio.png";
 import transit from "../../images/2-ford.png";
 import courier from "../../images/courier.webp";
@@ -22,12 +23,22 @@ import {
   Tabs,
 } from "react-bootstrap";
 import "./mainpage.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import descimg from "../../images/descimg.jpg";
 import desc2 from "../../images/desc1.jpg";
 
 const Mainpage = () => {
   const [index, setIndex] = useState(0);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
 
   const handleSelect = (selectedIndex: SetStateAction<number>) => {
     setIndex(selectedIndex);
@@ -36,24 +47,31 @@ const Mainpage = () => {
     <>
       <Carousel activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item>
-          <img src={carouselImg1} className="object-fit-cover" />
-          <Carousel.Caption className="mb-5">
-            <h4>Hızlı ve Güvenilir Araç Kiralama</h4>
+          <img src={carouselImg} className="object-fit-cover" />
+          <Carousel.Caption>
+            <h4>Araç Kiralama</h4>
             <p>Konfor, Güven, Uygun Fiyat</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img src={carouselImg2} className="object-fit-cover" />
-          <Carousel.Caption className="mb-5">
-            <h4>Kolay Araç Kiralama Deneyimi</h4>
+          <img src={carouselImg1} className="object-fit-cover" />
+          <Carousel.Caption>
+            <h4>Filo Kiralama</h4>
             <p>Hız, Esneklik, Memnuniyet</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img src={carouselImg} className="object-fit-cover" />
-          <Carousel.Caption className="mb-5">
+          <img src={carouselImg3} className="object-fit-cover" />
+          <Carousel.Caption>
             <h4>Her Yola Uygun Araçlar</h4>
             <p>Kalite, Konfor, Güvenlik</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img src={carouselImg2} className="object-fit-cover" />
+          <Carousel.Caption>
+            <h4>Ticari Araç Kiralama</h4>
+            <p>İşiniz İçin Hazır</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
@@ -212,7 +230,7 @@ const Mainpage = () => {
         </Container>
       </div>
 
-      <div className="job-description bg-danger" id="job-description">
+      <div className="job-description bg-danger"  id="job-description">
         <Row>
           <Col sm={12} md={6} className="p-0">
             <img src={descimg} className="egea" />
