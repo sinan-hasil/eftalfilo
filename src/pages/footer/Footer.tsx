@@ -14,21 +14,18 @@ const Footer = () => {
         <footer className="bg-dark py-5">
       <div className="container">
         <div className="row">
-          <div className="col col-sm-12 col-md-6">
+          <div className="col col-sm-12 col-md-4">
             <img src={logo} width={"100px"} />
-            <p>
+            <p style={{width: "100%"}}>
               Özel Transfer Hizmetlerimizde zamanınızı özverili ve etkili kullanmanıza yardımcı olmaya çalışıyor ve her hizmet alanımızda olduğu gibi bu hizmet alanımızda devam ediyoruz.
             </p>
           </div>
-          <div className="col col-sm-12 col-md-3">
+          <div className="col col-sm-12 col-md-4">
             <h4>Menüler</h4>
             <ul className="mt-3">
               <li>
                 <Nav.Link as={Link} to={"/"}>Anasayfa</Nav.Link>
-              </li>
-              <li>
-              <Nav.Link as={Link} to={"/"}></Nav.Link>
-              </li>
+              </li>            
               <li>
                 <a href="#car-cards" className="nav-link">Hizmetlerimiz</a>
               </li>

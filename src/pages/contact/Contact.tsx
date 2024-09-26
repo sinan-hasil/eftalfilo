@@ -118,7 +118,7 @@ const Contact = () => {
   const handleChange = (val: any) => setValue(val);
 
   const handleWhatsAppSend = () => {
-    const phoneNumber = "+905513911163";
+    const phoneNumber = "+905313260853";
     const url =
       "https://wa.me/" +
       phoneNumber +
