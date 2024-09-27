@@ -47,28 +47,28 @@ const Mainpage = () => {
     <>
       <Carousel activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item>
-          <img src={carouselImg} className="object-fit-cover" />
+          <img src={carouselImg} alt="eftal egea" className="object-fit-cover" />
           <Carousel.Caption>
             <h1>ARAÇ KİRALAMA</h1>
             <p>Konfor, Güven, Uygun Fiyat</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img src={carouselImg1} className="object-fit-cover" />
+          <img src={carouselImg1} alt="eftal doblo" className="object-fit-cover" />
           <Carousel.Caption>
             <h1>FİLO KİRALAMA</h1>
             <p>Hız, Esneklik, Memnuniyet</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img src={carouselImg3} className="object-fit-cover" />
+          <img src={carouselImg3} alt="eftal arazi" className="object-fit-cover" />
           <Carousel.Caption>
             <h1>HER YOLA UYGUN ARAÇLAR</h1>
             <p>Kalite, Konfor, Güvenlik</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img src={carouselImg2} className="object-fit-cover" />
+          <img src={carouselImg2} alt="eftal ticari" className="object-fit-cover" />
           <Carousel.Caption>
             <h1>TİCARİ ARAÇLAR</h1>
             <p>İşiniz İçin Hazır</p>
@@ -233,7 +233,7 @@ const Mainpage = () => {
       <div className="job-description bg-danger"  id="job-description">
         <Row>
           <Col sm={12} md={6} className="p-0">
-            <img src={descimg} className="egea" />
+            <img src={descimg} alt="filo kiralama" className="egea" />
           </Col>
           <Col sm={12} md={6} className="p-5 d-flex justify-content-center flex-column">
             <h4 className="text-white">Neden Eftal?</h4>
