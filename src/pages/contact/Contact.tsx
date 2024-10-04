@@ -16,6 +16,8 @@ import { Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { PiInstagramLogoFill } from "react-icons/pi";
 import { FaLinkedin } from "react-icons/fa";
+import { IoIosArrowDown } from "react-icons/io";
+
 import "./contact.css";
 
 interface BrandItem {
@@ -47,7 +49,9 @@ const brand: BrandArray = [
   },
 ];
 
-const rentalPeriods = ["Günlük", "Aylık", "Yıllık"];
+const rentalKm = ["5.000km", "10.000km", "15.000km", "20.000km", "25.000km", "30.000km", "35.000km", "40.000km", "45.000km",]
+
+const rentalPeriods = ["Günlük", "Aylık", "12 Ay", "24 Ay", "36 Ay", "47 Ay"];
 
 const ilceler = [
   "Başiskele",
@@ -65,12 +69,13 @@ const ilceler = [
 ];
 
 const Contact = () => {
-  const [selectedBrand, setSelectedBrand] = useState<string>("Marka Seçin");
+  const [selectedBrand, setSelectedBrand] = useState<string>("Seçin");
   const [models, setModels] = useState<string[]>([]);
-  const [selectedModel, setSelectedModel] = useState<string>("Model Seçin");
+  const [selectedModel, setSelectedModel] = useState<string>("Seçin");
   const [selectedPeriod, setSelectedPeriod] = useState<string>(
-    "Kiralama Süresi Seçin"
+    "Ay"
   );
+  const [selectedKm, setSelectedKm] = useState<string>("10.000km")
   const [quantity, setQuantity] = useState<number>(1);
   const [value, setValue] = useState([1, 3]);
   const [customerType, setCustomerType] = useState<string>("Bireysel");
@@ -94,6 +99,10 @@ const Contact = () => {
     } else {
       setModels([]);
     }
+  };
+
+  const handleKm = (km: string) => {
+    setSelectedKm(km);
   };
 
   const handleModelSelect = (model: string) => {
@@ -161,13 +170,15 @@ const Contact = () => {
           <form>
             <Container>
               <Row className="d-flex justify-content-between">
-              <Col className="d-flex flex-column gap-1 align-items-center">
+              <Col className="d-flex flex-column gap-1 ">
+              <small>Marka</small>
                 <Dropdown>
                   <Dropdown.Toggle
-                    variant="outline-primary"
+                    variant="outline"
                     id="dropdown-basic"
                   >
                     {selectedBrand}
+                      <IoIosArrowDown />  
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu>
@@ -186,10 +197,11 @@ const Contact = () => {
                 </Dropdown>
               </Col>
 
-              <Col className="d-flex flex-column gap-1 align-items-center">
+              <Col className="d-flex flex-column gap-1">
+                  <small>Model</small>
                 <Dropdown>
                   <Dropdown.Toggle
-                    variant="outline-primary"
+                    variant="outline"
                     id="dropdown-basic"
                   >
                     {selectedModel}
@@ -212,10 +224,38 @@ const Contact = () => {
                 </Dropdown>
               </Col>
 
-              <Col className="d-flex flex-column gap-1 align-items-center">
+              <Col className="d-flex flex-column gap-1">
+                  <small>Yıllık Kullanım</small>
                 <Dropdown>
                   <Dropdown.Toggle
-                    variant="outline-primary"
+                    variant="outline"
+                    id="dropdown-basic"
+                  >
+                    {selectedKm}
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu>
+                    {selectedKm.length > 0 ? (
+                      rentalKm.map((km, index) => (
+                        <Dropdown.Item
+                          key={index}
+                          onClick={() => handleKm(km)}
+                        >
+                          {km}
+                        </Dropdown.Item>
+                      ))
+                    ) : (
+                      <Dropdown.Item disabled>Marka Seçiniz</Dropdown.Item>
+                    )}
+                  </Dropdown.Menu>
+                </Dropdown>
+              </Col>
+
+              <Col className="d-flex flex-column gap-1">
+              <small>Vade</small>
+                <Dropdown className="d-flex justify-content-between w-100">
+                  <Dropdown.Toggle
+                    variant="outline"
                     id="dropdown-basic"
                   >
                     {selectedPeriod}

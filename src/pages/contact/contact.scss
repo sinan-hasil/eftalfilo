@@ -1,3 +1,12 @@
+.dropdown-toggle{
+    display: flex;
+    align-items: center;
+    &::after{
+        content: "" !important;
+        margin-left: 20px !important;
+    }
+}
+
 form{
     .container{
         .col{
