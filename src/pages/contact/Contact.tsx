@@ -17,6 +17,8 @@ import { Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { PiInstagramLogoFill } from "react-icons/pi";
 import { FaLinkedin } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
+import handleWhatappSendIcon from "../mainpage/Mainpage";
 import "./contact.css";
 
 interface BrandItem {
@@ -28,7 +30,6 @@ interface SelectedVehicle {
   model: string;
   km: string;
   period: string;
-  package: string;
   quantity: number;
 }
 
@@ -56,8 +57,6 @@ const brand: BrandArray = [
     ],
   },
 ];
-
-const rentalPackage = ["Konfor"];
 
 const rentalKm = [
   "5.000km",
@@ -119,7 +118,6 @@ const Contact = () => {
   const [selectedModel, setSelectedModel] = useState<string>("Seçin");
   const [selectedPeriod, setSelectedPeriod] = useState<string>("Ay");
   const [selectedKm, setSelectedKm] = useState<string>("10.000");
-  const [selectedPackage, setSelectedPackage] = useState("Seç");
   const [quantity, setQuantity] = useState<number>(1);
   const [value, setValue] = useState([1, 3]);
   const [customerType, setCustomerType] = useState<string>("Bireysel");
@@ -146,7 +144,6 @@ const Contact = () => {
       model: selectedModel,
       km: selectedKm,
       period: selectedPeriod,
-      package: selectedPackage,
       quantity: quantity,
     };
 
@@ -157,7 +154,6 @@ const Contact = () => {
     setSelectedModel("Seçin");
     setSelectedKm("10.000");
     setSelectedPeriod("Ay");
-    setSelectedPackage("Seç");
     setQuantity(1);
   };
 
@@ -188,10 +184,6 @@ const Contact = () => {
     setSelectedKm(km);
   };
 
-  const handlePackage = (confort: string) => {
-    setSelectedPackage(confort);
-  };
-
   const handleModelSelect = (model: string) => {
     setSelectedModel(model);
   };
@@ -214,7 +206,7 @@ const Contact = () => {
   const handleChange = (val: any) => setValue(val);
 
   const handleWhatsAppSend = () => {
-    const phoneNumber = "+905513911163";
+    const phoneNumber = "+905313260853";
     const url =
       "https://wa.me/" +
       phoneNumber +
@@ -235,9 +227,6 @@ const Contact = () => {
       " - \n" +
       "\n Vade: " +
       selectedPeriod +
-      " - \n" +
-      "\n Kiralama Paketi: " +
-      selectedPackage +
       " - \n" +
       "\n Müşteri Tipi: " +
       customerType +
@@ -283,6 +272,10 @@ const Contact = () => {
             alın!
           </p>
         </Container>
+      </div>
+
+      <div className="wp" onClick={handleWhatappSendIcon}>
+        <FaWhatsapp className="wp-icon" />
       </div>
 
       <div className="form-div mb-5">
@@ -397,30 +390,6 @@ const Contact = () => {
                   </Dropdown>
                 </Col>
 
-                <Col className="d-flex flex-column gap-1">
-                  <small>Kiralama Paketi</small>
-                  <Dropdown className="d-flex justify-content-between w-100">
-                    <Dropdown.Toggle
-                      className="package-drop"
-                      variant="outline"
-                      id="dropdown-basic"
-                    >
-                      {selectedPackage}
-                    </Dropdown.Toggle>
-
-                    <Dropdown.Menu>
-                      {rentalPackage.map((cnf, index) => (
-                        <Dropdown.Item
-                          key={index}
-                          onClick={() => handlePackage(cnf)}
-                        >
-                          {cnf}
-                        </Dropdown.Item>
-                      ))}
-                    </Dropdown.Menu>
-                  </Dropdown>
-                </Col>
-
                 <Col className="ms-1 mt-2">
                   <div>
                     <ToggleButtonGroup
@@ -485,7 +454,6 @@ const Contact = () => {
                           <td>{vehicle.model}</td>
                           <td>{vehicle.km}</td>
                           <td>{vehicle.period}</td>
-                          <td>{vehicle.package}</td>
                           <td>{vehicle.quantity}</td>
                           <td>
                             <Button
@@ -695,7 +663,13 @@ const Contact = () => {
                 </Row>
               </Container>
             </div>
-            <Button onClick={handleWhatsAppSend}>Talep Et</Button>
+            <Button
+              variant="success"
+              className="d-flex align-items-center gap-1"
+              onClick={handleWhatsAppSend}
+            >
+              <FaWhatsapp /> Talep Et
+            </Button>
           </form>
         </Container>
       </div>

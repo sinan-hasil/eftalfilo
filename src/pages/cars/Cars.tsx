@@ -27,10 +27,16 @@ import vinc from "./cars-img/sepetli-vinc_1-4000x9000.webp";
 import vito from "./cars-img/vito.png";
 import crafter from "./cars-img/crafter.png";
 import "./cars.css";
+import { handleWhatappSendIcon } from "../mainpage/Mainpage";
+import { FaWhatsapp } from "react-icons/fa6";
 
 const Cars = () => {
   return (
     <>
+    <div className="wp" onClick={handleWhatappSendIcon}>
+        <FaWhatsapp className="wp-icon" />
+      </div>
+      
       <Container>
         <nav className="mt-5">
           <div className="nav nav-tabs" id="nav-tab" role="tablist">

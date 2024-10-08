@@ -26,6 +26,14 @@ import "./mainpage.css";
 import { Link, useLocation } from "react-router-dom";
 import descimg from "../../images/descimg.jpg";
 import desc2 from "../../images/desc1.jpg";
+import { FaWhatsapp } from "react-icons/fa6";
+
+export const handleWhatappSendIcon = () => {
+  const phoneNumber = "+905313260853";
+  const url = "https://wa.me/" + phoneNumber + 
+  "?text=" + "Merhaba! Araçlarınız hakkında bilgi almak istiyorum."
+  window.open(url, "_blank")?.focus()
+}
 
 const Mainpage = () => {
   const [index, setIndex] = useState(0);
@@ -43,6 +51,8 @@ const Mainpage = () => {
   const handleSelect = (selectedIndex: SetStateAction<number>) => {
     setIndex(selectedIndex);
   };
+
+ 
   return (
     <>
       <Carousel activeIndex={index} onSelect={handleSelect}>
@@ -75,6 +85,10 @@ const Mainpage = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+
+      <div className="wp" onClick={handleWhatappSendIcon}>
+        <FaWhatsapp className="wp-icon" />
+      </div>
 
       <div className="tab">
         <Container>
@@ -229,6 +243,8 @@ const Mainpage = () => {
           </Tabs>
         </Container>
       </div>
+
+      
 
       <div className="job-description bg-danger"  id="job-description">
         <Row>

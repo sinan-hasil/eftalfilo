@@ -11,7 +11,8 @@ import {
 import logo from "../../images/Koyu Logo .png";
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
-import "./root.css"
+import "./root.css";
+
 const Root = () => {
   const [show, setShow] = useState(false);
 
@@ -28,17 +29,32 @@ const Root = () => {
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text>
               <Nav className="me-auto gap-5">
-                <Nav.Link as={Link} to={"/"} className="d-none d-sm-block text-muted">
+                <Nav.Link
+                  as={Link}
+                  to={"/"}
+                  className="d-none d-sm-block text-muted"
+                >
                   Anasayfa
                 </Nav.Link>
-                <NavDropdown className="d-none d-sm-block text-muted" title="Araçlarımız" id="basic-nav-dropdown">
+                <NavDropdown
+                  className="d-none d-sm-block text-muted"
+                  title="Araçlarımız"
+                  id="basic-nav-dropdown"
+                >
                   <NavDropdown.Item className="text-muted" href="#action/3.1">
-                    <Nav.Link as={Link} to={"/cars/#nav-home-tab"} className="text-center">
+                    <Nav.Link
+                      as={Link}
+                      to={"/cars/#nav-home-tab"}
+                      className="text-center"
+                    >
                       Binek Araç
                     </Nav.Link>
                   </NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">
-                    <Nav.Link href={"/cars/#nav-profile-tab"} className="text-center">
+                    <Nav.Link
+                      href={"/cars/#nav-profile-tab"}
+                      className="text-center"
+                    >
                       Hafif Ticari
                     </Nav.Link>
                   </NavDropdown.Item>
@@ -63,14 +79,26 @@ const Root = () => {
                     </Nav.Link>
                   </NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link className="d-none d-sm-block text-muted" as={Link} to="/#job-description">
+                <Nav.Link
+                  className="d-none d-sm-block text-muted"
+                  as={Link}
+                  to="/#job-description"
+                >
                   Hakkımızda
                 </Nav.Link>
-                <Nav.Link className="d-none d-sm-block text-muted" as={Link} to={"/contact"}>
+                <Nav.Link
+                  className="d-none d-sm-block text-muted"
+                  as={Link}
+                  to={"/contact"}
+                >
                   İletişim
                 </Nav.Link>
                 <Nav.Link className="d-block d-sm-none">
-                  <Button variant="danger" className="d-flex justify-content-center align-items-center py-2" onClick={handleShow}>
+                  <Button
+                    variant="danger"
+                    className="d-flex justify-content-center align-items-center py-2"
+                    onClick={handleShow}
+                  >
                     <RxHamburgerMenu />
                   </Button>
                 </Nav.Link>
@@ -82,16 +110,20 @@ const Root = () => {
 
       <div className="resp-nav" style={{ display: "none" }}>
         <Offcanvas show={show} onHide={handleClose}>
-          <Offcanvas.Header closeButton>
-          </Offcanvas.Header>
+          <Offcanvas.Header closeButton></Offcanvas.Header>
           <Offcanvas.Body>
-            <ul style={{
-              listStyle: "none"}}>
-              <li style={{padding: "10px 0"}}>
-                <Nav.Link as={Link} to={"/"}>Anasayfa</Nav.Link>
+            <ul
+              style={{
+                listStyle: "none",
+              }}
+            >
+              <li style={{ padding: "10px 0" }}>
+                <Nav.Link as={Link} to={"/"}>
+                  Anasayfa
+                </Nav.Link>
               </li>
-              <li style={{padding: "10px 0"}}>
-              <NavDropdown title="Araçlarımız" id="basic-nav-dropdown">
+              <li style={{ padding: "10px 0" }}>
+                <NavDropdown title="Araçlarımız" id="basic-nav-dropdown">
                   <NavDropdown.Item href="#action/3.1">
                     <Nav.Link as={Link} to={"/cars"} className="text-center">
                       Binek Araç
@@ -124,14 +156,23 @@ const Root = () => {
                   </NavDropdown.Item>
                 </NavDropdown>
               </li>
-              <li style={{padding: "10px 0"}}><Nav.Link as={Link} to={"#job-description"}>Hakkımızda</Nav.Link></li>
-              <li style={{padding: "10px 0"}}><Nav.Link as={Link} to={"/contact"}>İletişim</Nav.Link></li>
+              <li style={{ padding: "10px 0" }}>
+                <Nav.Link as={Link} to={"#job-description"}>
+                  Hakkımızda
+                </Nav.Link>
+              </li>
+              <li style={{ padding: "10px 0" }}>
+                <Nav.Link as={Link} to={"/contact"}>
+                  İletişim
+                </Nav.Link>
+              </li>
             </ul>
           </Offcanvas.Body>
         </Offcanvas>
       </div>
 
       <Outlet />
+      
 
       <Footer />
     </>
