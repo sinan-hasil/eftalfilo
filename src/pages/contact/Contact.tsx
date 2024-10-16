@@ -696,7 +696,7 @@ const Contact = () => {
 
               <li className="mt-4">
                 <span className="d-flex align-items-center justify-content-center gap-2">
-                  <IoMdMail /> <span>İnfo@eftalrentacar.com</span>
+                  <IoMdMail /> <span>İnfo@eftalfilo.com</span>
                 </span>
               </li>
               <li className="mt-4">

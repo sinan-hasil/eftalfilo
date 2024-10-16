@@ -43,7 +43,7 @@ const Footer = () => {
               
               <li>
                 <i className="bi bi-envelope-fill"></i>
-                <span className="d-flex gap-3 align-items-center"><IoMdMail /> <span>İnfo@eftalrentacar.com</span></span>
+                <span className="d-flex gap-3 align-items-center"><IoMdMail /> <span>İnfo@eftalfilo.com</span></span>
               </li>
               <li>
                 <i className="bi bi-geo-alt-fill"></i>
