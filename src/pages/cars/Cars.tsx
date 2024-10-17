@@ -25,7 +25,7 @@ import kuka from "./cars-img/kuka.png";
 import temsa from "./cars-img/temsa atlas.jpg";
 import vinc from "./cars-img/sepetli-vinc_1-4000x9000.webp";
 import vito from "./cars-img/vito.png";
-import crafter from "./cars-img/crafter.png";
+import crafter from "./cars-img/vipcrafter.png";
 import "./cars.css";
 import { handleWhatappSendIcon } from "../mainpage/Mainpage";
 import { FaWhatsapp } from "react-icons/fa6";
@@ -33,10 +33,10 @@ import { FaWhatsapp } from "react-icons/fa6";
 const Cars = () => {
   return (
     <>
-    <div className="wp" onClick={handleWhatappSendIcon}>
+      <div className="wp" onClick={handleWhatappSendIcon}>
         <FaWhatsapp className="wp-icon" />
       </div>
-      
+
       <Container>
         <nav className="mt-5">
           <div className="nav nav-tabs" id="nav-tab" role="tablist">
@@ -431,10 +431,10 @@ const Cars = () => {
                     <Card.Body>
                       <Card.Title>Isuzu D-MAX 4X2</Card.Title>
                       <Card.Text>
-                        This is a wider card with supporting text below as a
-                        natural lead-in to additional content. This card has
-                        even longer content than the first to show that equal
-                        height action.
+                        Sağlam ve güvenilir Isuzu D-Max 4x2, yüksek performansı
+                        ve dayanıklı yapısıyla her türlü yol koşulunda güvenle
+                        ilerler. Yük taşımak ve iş sahalarında kullanım için
+                        ideal bir seçim sunar.
                       </Card.Text>
                     </Card.Body>
                   </Card>
@@ -555,10 +555,12 @@ const Cars = () => {
                       />
                     </div>
                     <Card.Body>
-                      <Card.Title>Kanal Açma Aracı</Card.Title>
+                      <Card.Title>Temsa Atlas</Card.Title>
                       <Card.Text>
-                        Kombine kuka kanal açma aracı, su basıncıyla kanalları
-                        açan ve vakumla atıkları toplayan bir temizlik aracıdır.
+                        Temsa Atlas, güçlü motoru ve geniş yük kapasitesi ile
+                        ticari taşımacılıkta üstün performans sağlar. Yüksek
+                        verimlilik ve dayanıklılık sunarak uzun yolculuklar için
+                        ideal bir çözümdür.
                       </Card.Text>
                     </Card.Body>
                   </Card>
@@ -567,11 +569,12 @@ const Cars = () => {
                       <img src={vinc} style={{ width: "200px" }} />
                     </div>
                     <Card.Body>
-                      <Card.Title>Süpürge Aracı</Card.Title>
+                      <Card.Title>Sepetli Vinç</Card.Title>
                       <Card.Text>
-                        Süpürge aracı, caddeleri ve otopark gibi geniş alanları
-                        temizlemek için kullanılan, pratik ve çevre dostu bir
-                        temizlik aracıdır.
+                        Sepetli vinç, yüksek noktalara güvenli erişim sağlayan,
+                        sepetli platforma sahip bir iş makinesidir. Yüksek bina
+                        bakımları, elektrik direği onarımları ve benzeri işler
+                        için idealdir.
                       </Card.Text>
                     </Card.Body>
                   </Card>
