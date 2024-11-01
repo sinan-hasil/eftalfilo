@@ -9,6 +9,7 @@ import Root from './pages/root/Root';
 import Mainpage from './pages/mainpage/Mainpage';
 import "bootstrap/dist/css/bootstrap.min.css"
 import Cars from './pages/cars/Cars';
+import Request from './pages/request/Request';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/cars",
         element: <Cars />
+      },
+      {
+        path: "/request",
+        element: <Request />
       }
     ]
   },

@@ -28,7 +28,7 @@ const Root = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text>
-              <Nav className="me-auto gap-5">
+              <Nav className="me-auto gap-3">
                 <Nav.Link
                   as={Link}
                   to={"/"}
@@ -92,6 +92,13 @@ const Root = () => {
                   to={"/contact"}
                 >
                   İletişim
+                </Nav.Link>
+                <Nav.Link
+                  className="d-none d-sm-block text-muted"
+                  as={Link}
+                  to={"/request"}
+                >
+                  Talep Et
                 </Nav.Link>
                 <Nav.Link className="d-block d-sm-none">
                   <Button
